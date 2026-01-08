@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Stories - Horror-Pedia</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background Elements -->
+  <div class="background-elements">
+    <div class="glowing-eye eye-1"></div>
+    <div class="glowing-eye eye-2"></div>
+    <div class="glowing-eye eye-3"></div>
+    <div class="glowing-eye eye-4"></div>
+    <div class="fog-overlay"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">HORROR-PEDIA</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="read.html" class="active">Browse Stories</a>
+        <a href="write.html">Write</a>
+        <span class="user-info" id="userInfo"></span>
+        <button class="btn-logout" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="read-page">
+    <!-- Story View Toggle -->
+    <div class="view-controls">
+      <button class="view-btn active" id="gridViewBtn" data-view="grid">Grid</button>
+      <button class="view-btn" id="listViewBtn" data-view="list">List</button>
+    </div>
+
+    <!-- Filters and Search -->
+    <div class="filters-section">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search stories...">
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="filter-controls">
+        <select id="sortSelect">
+          <option value="recent">Most Recent</option>
+          <option value="popular">Most Popular</option>
+          <option value="rated">Highest Rated</option>
+          <option value="longest">Longest</option>
+          <option value="shortest">Shortest</option>
+        </select>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="ghost">Ghost Stories</option>
+          <option value="urban">Urban Legends</option>
+          <option value="psychological">Psychological Horror</option>
+          <option value="supernatural">Supernatural</option>
+          <option value="slasher">Slasher</option>
+          <option value="paranormal">Paranormal</option>
+        </select>
+        <select id="scareFilter">
+          <option value="all">All Scare Levels</option>
+          <option value="1">1 Skull</option>
+          <option value="2">2 Skulls</option>
+          <option value="3">3 Skulls</option>
+          <option value="4">4 Skulls</option>
+          <option value="5">5 Skulls</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Stories Grid/List -->
+    <div class="stories-container" id="storiesContainer">
+      <!-- Stories will be dynamically loaded here -->
+    </div>
+
+    <!-- Story Detail Modal -->
+    <div class="modal" id="storyModal">
+      <div class="modal-content story-modal">
+        <span class="close-modal">&times;</span>
+        <div class="story-detail" id="storyDetail">
+          <!-- Story content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

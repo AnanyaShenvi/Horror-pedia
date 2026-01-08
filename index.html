@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horror-Pedia: Are You Ready?</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background Elements -->
+  <div class="background-elements">
+    <div class="glowing-eye eye-1"></div>
+    <div class="glowing-eye eye-2"></div>
+    <div class="glowing-eye eye-3"></div>
+    <div class="glowing-eye eye-4"></div>
+    <div class="ghost ghost-1"></div>
+    <div class="ghost ghost-2"></div>
+    <div class="spider-web web-1"></div>
+    <div class="spider-web web-2"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="logo">HORROR-PEDIA</h1>
+      <div class="nav-buttons">
+        <button class="btn-login" id="loginBtn">Login</button>
+        <button class="btn-signup" id="signupBtn">Sign Up</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="haunted-house-container">
+        <div class="haunted-house">
+          <div class="house-roof"></div>
+          <div class="house-body">
+            <div class="window window-left">
+              <div class="window-glow"></div>
+            </div>
+            <div class="door">
+              <div class="door-knob"></div>
+            </div>
+            <div class="window window-right">
+              <div class="window-glow"></div>
+            </div>
+          </div>
+        </div>
+        <div class="tree tree-left"></div>
+        <div class="tree tree-right"></div>
+      </div>
+      <h2 class="hero-title">ARE YOU READY?</h2>
+      <p class="hero-subtitle">Enter a world of spine-chilling tales and terrifying stories</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" id="heroLoginBtn">Enter the Darkness</button>
+        <button class="btn-secondary" id="heroSignupBtn">Join the Community</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Stories Preview -->
+  <section class="featured-stories">
+    <h3 class="section-title">Featured Stories</h3>
+    <div class="stories-grid" id="featuredStories">
+      <div class="story-card blurred">
+        <div class="story-card-content">
+          <h4>The Old Mansion</h4>
+          <p class="story-excerpt">They say the mansion has been empty for decades, but the lights still flicker at midnight...</p>
+          <div class="story-meta">
+            <span class="author">Anonymous</span>
+            <span class="read-time">5 min read</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-card blurred">
+        <div class="story-card-content">
+          <h4>Whispers in the Dark</h4>
+          <p class="story-excerpt">Every night at 3 AM, the whispers begin. No one knows where they come from...</p>
+          <div class="story-meta">
+            <span class="author">Anonymous</span>
+            <span class="read-time">8 min read</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-card blurred">
+        <div class="story-card-content">
+          <h4>The Last Train</h4>
+          <p class="story-excerpt">The 11:59 train doesn't appear on any schedule, but it always arrives on time...</p>
+          <div class="story-meta">
+            <span class="author">Anonymous</span>
+            <span class="read-time">6 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="login-prompt">Sign up or login to read these terrifying tales!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About Horror-Pedia</h4>
+        <p>A community-driven platform for horror enthusiasts to share and discover spine-chilling stories.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="read.html">Browse Stories</a></li>
+          <li><a href="write.html">Write a Story</a></li>
+          <li><a href="#" id="aboutLink">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Horror-Pedia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content spooky-border">
+      <span class="close-modal">&times;</span>
+      <div class="modal-eyes">
+        <div class="modal-eye eye-left"></div>
+        <div class="modal-eye eye-right"></div>
+      </div>
+      <h2>Welcome Back, Brave Soul</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginUsername">Username or Email</label>
+          <input type="text" id="loginUsername" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="stayLoggedIn">
+          <label for="stayLoggedIn">Stay logged in</label>
+        </div>
+        <button type="submit" class="btn-primary">Enter</button>
+        <p class="modal-link">Don't have an account? <a href="#" id="switchToSignup">Sign up here</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content spooky-border">
+      <span class="close-modal">&times;</span>
+      <div class="modal-eyes">
+        <div class="modal-eye eye-left"></div>
+        <div class="modal-eye eye-right"></div>
+      </div>
+      <h2>Join the Horror Community</h2>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="signupDisplayName">Display Name (or Anonymous)</label>
+          <input type="text" id="signupDisplayName" placeholder="Anonymous" required>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPasswordConfirm">Confirm Password</label>
+          <input type="password" id="signupPasswordConfirm" required>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="ageVerification" required>
+          <label for="ageVerification">I am 18 years or older</label>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="termsAccept" required>
+          <label for="termsAccept">I accept the terms and conditions</label>
+        </div>
+        <button type="submit" class="btn-primary">Create Account</button>
+        <p class="modal-link">Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

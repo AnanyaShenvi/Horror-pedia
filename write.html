@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write Story - Horror-Pedia</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background Elements -->
+  <div class="background-elements">
+    <div class="glowing-eye eye-1"></div>
+    <div class="glowing-eye eye-2"></div>
+    <div class="glowing-eye eye-3"></div>
+    <div class="glowing-eye eye-4"></div>
+    <div class="candle candle-1">
+      <div class="flame"></div>
+    </div>
+    <div class="spider-web web-1"></div>
+    <div class="spider-web web-2"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">HORROR-PEDIA</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="read.html">Browse Stories</a>
+        <a href="write.html" class="active">Write</a>
+        <span class="user-info" id="userInfo"></span>
+        <button class="btn-logout" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="write-page">
+    <div class="write-container">
+      <h2 class="page-title">Write Your Horror Story</h2>
+      
+      <!-- Story Metadata -->
+      <div class="story-metadata">
+        <div class="form-group">
+          <label for="storyTitle">Story Title</label>
+          <input type="text" id="storyTitle" placeholder="Enter a spine-chilling title..." required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="storyCategory">Category</label>
+            <select id="storyCategory" required>
+              <option value="">Select a category...</option>
+              <option value="ghost">Ghost Stories</option>
+              <option value="urban">Urban Legends</option>
+              <option value="psychological">Psychological Horror</option>
+              <option value="supernatural">Supernatural</option>
+              <option value="slasher">Slasher</option>
+              <option value="paranormal">Paranormal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="storyScareRating">Scare Rating</label>
+            <select id="storyScareRating" required>
+              <option value="1">1 Skull - Mild</option>
+              <option value="2">2 Skulls - Moderate</option>
+              <option value="3">3 Skulls - Scary</option>
+              <option value="4">4 Skulls - Very Scary</option>
+              <option value="5">5 Skulls - Terrifying</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="storyTags">Tags (comma-separated, max 10)</label>
+          <input type="text" id="storyTags" placeholder="e.g., haunted, mansion, ghost, mystery">
+        </div>
+
+        <div class="form-group">
+          <label>Content Warnings</label>
+          <div class="checkbox-group warnings">
+            <label><input type="checkbox" name="warnings" value="violence"> Violence</label>
+            <label><input type="checkbox" name="warnings" value="gore"> Gore</label>
+            <label><input type="checkbox" name="warnings" value="psychological"> Psychological</label>
+            <label><input type="checkbox" name="warnings" value="death"> Death</label>
+            <label><input type="checkbox" name="warnings" value="supernatural"> Supernatural</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Author Display</label>
+          <div class="radio-group">
+            <label><input type="radio" name="authorDisplay" value="name" checked> Use my name</label>
+            <label><input type="radio" name="authorDisplay" value="pen"> Use pen name</label>
+            <label><input type="radio" name="authorDisplay" value="anonymous"> Post anonymously</label>
+          </div>
+          <input type="text" id="penName" placeholder="Enter pen name..." style="display:none; margin-top: 10px;">
+        </div>
+      </div>
+
+      <!-- Rich Text Editor -->
+      <div class="editor-container">
+        <div class="editor-toolbar">
+          <button class="toolbar-btn" data-command="bold" title="Bold">B</button>
+          <button class="toolbar-btn" data-command="italic" title="Italic">I</button>
+          <button class="toolbar-btn" data-command="underline" title="Underline">U</button>
+          <div class="toolbar-separator"></div>
+          <button class="toolbar-btn" data-command="formatBlock" data-value="h2" title="Heading 2">H2</button>
+          <button class="toolbar-btn" data-command="formatBlock" data-value="h3" title="Heading 3">H3</button>
+          <div class="toolbar-separator"></div>
+          <button class="toolbar-btn" data-command="insertUnorderedList" title="Bullet List">• List</button>
+          <button class="toolbar-btn" data-command="insertOrderedList" title="Numbered List">1. List</button>
+          <button class="toolbar-btn" data-command="formatBlock" data-value="blockquote" title="Quote">" Quote</button>
+        </div>
+        <div class="editor-content" id="storyContent" contenteditable="true" placeholder="Begin writing your terrifying tale..."></div>
+        <div class="editor-footer">
+          <span class="word-count">Words: <span id="wordCount">0</span></span>
+          <span class="char-count">Characters: <span id="charCount">0</span></span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="btn-secondary" id="saveDraftBtn">Save as Draft</button>
+        <button class="btn-secondary" id="previewBtn">Preview</button>
+        <button class="btn-primary" id="publishBtn">Publish Story</button>
+        <button class="btn-danger" id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Preview Modal -->
+  <div class="modal" id="previewModal">
+    <div class="modal-content preview-modal">
+      <span class="close-modal">&times;</span>
+      <div class="preview-content" id="previewContent">
+        <!-- Preview will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
